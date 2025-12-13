@@ -33,6 +33,38 @@ greet();  // Hello
 function greet() {
   console.log(a);
 }
+// let
+let b=10;
+console.log(b);
+// function scope
+function sum(){
+  let r=50;
+  console.log(r);
+}
+sum();
+// Reassignable
+let s=40;
+s=10000;
+console.log(s);
+// block scope
+{
+  let i=20;
+  console.log(i);
+}
+// constant
+const w=20;
+console.log(w);
+// block scope
+{
+  const r=30;
+console.log(r);
+}
+// function scope
+function add() {
+  const w=20;
+console.log(w);
+}
+add();
 
 
 
