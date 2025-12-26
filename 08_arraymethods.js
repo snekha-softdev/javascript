@@ -15,13 +15,13 @@ let arr8 = [1,2,3,4,5,6];
 arr8.shift(10);
 console.log(arr8);
 // splice
-let arr3 = [1, 2, 3, 4];
+let arr3 = [1, 2, 3, 4,5];
 // remove
 arr3.splice(1, 3);
 console.log(arr3);
 // add
-let arr4= [10,20,30,40,50];
-arr4.splice(5,60,70,80);
+let arr4= [10,20,30,40,50,90];
+arr4.splice(5,0,60,70,80);
 console.log(arr4);
 // replace
 let arr5= [1,2,3,4,5,6,7,8,9];
@@ -45,6 +45,17 @@ console.log(arr7);
 let arr13 = [10,20,30,40,50,60,70,80,90];
 arr13.copyWithin(3,1,7);
 console.log(arr13);
+// copywithin
+let arr14 = [10,20,30,40,50,60,70,80,90];
+arr14.copyWithin(3,5,8);
+console.log(arr14);
+// copywithin
+let arr15 = ["apple","orange","gova","jackfruit", "watermelan","grapes","watermelan"];
+arr15.copyWithin(3,1,5);
+console.log(arr15);
+// copywithin
+
+
 
 
 
