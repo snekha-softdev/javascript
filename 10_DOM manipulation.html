@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- accessing element by id
+      -->
+    <h1 id="myheading">i am developer</h1>
+    <p class="para">This is a pragraph tag</p>
+    <p class="myParagraph">Old Paragraph 1</p>
+    <p class="myParagraph">Old Paragraph 2</p>
+    <p class="myParagraph">Old Paragraph 3</p>
+    <h1 id="myheading1">i am developer</h1>
+
+    <ul>
+      <li>Old Item 1</li>
+      <li>Old Item 2</li>
+      <li>Old Item 3</li>
+    </ul>
+    <h3>Try this in Try Me! Editor</h3>
+    <h3>Press F12 to see the console values or</h3>
+    <h3>Open console by inspect to see the console values</h3>
+    <div>Sample Element</div>
+    <div id="elementToRemove">Element to Remove</div>
+  
+
+    <script>
+      const heading = document.getElementById("myheading");
+      heading.textContent = "I Am a Full Stack Developer";
+      const paragraphs = document.getElementsByClassName("para");
+      paragraphs[0].textContent = "the paragraph tag is used to write pragraph";
+      // accessing element by classname//
+      const paragraph = document.getElementsByClassName("myParagraph");
+      for (let i = 0; i < paragraph.length; i++) {
+        paragraph[i].textContent = "This is paragraph " + (i + 1);
+      }
+      //   accessing element by Tagname
+      const listItems = document.getElementsByTagName("li");
+      for (let i = 0; i < 3; i++) {
+        listItems[i].textContent = "new item" + (i + 1);
+      }
+      // modifying elements style
+      const heading1 = document.getElementById("myheading1");
+      heading1.style.backgroundColor = "blue";
+      heading1.style.color = "white";
+      // creating new elements
+      const newParagraph = document.createElement("p");
+      newParagraph.textContent = "This is a new paragraph.";
+      document.body.appendChild(newParagraph);
+      // remove elements
+      const elementToRemove = document.getElementById("elementToRemove");
+      elementToRemove.remove();
+    </script>
+  </body>
+</html>
