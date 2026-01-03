@@ -1,0 +1,83 @@
+
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <title>Button Click Example</title>
+  </head>
+  <body>
+    <h3>Press F12 to see the console values or</h3>
+    <h3>Open console by inspect to see the console values</h3>
+  
+    <button onclick="console.log('Button Clicked!')">Click Me!</button>
+    <!-- mouseover events -->
+     <h3>Press F12 to see the console values or</h3>
+    <h3>Open console by inspect to see the console values</h3>
+  
+    <button onmouseover="alert('Mouse over!')">Hover Me!</button>
+    <!-- keydown events -->
+     <h3>Press F12 to see the console values or</h3>
+    <h3>Open console by inspect to see the console values</h3>
+  
+    <input type="text" onkeydown="console.log('Key down!')" />
+    <!-- submit events -->
+     <h3>You can try this in below output itself</h3>
+  
+    <form onsubmit="alert('Form submitted!')">
+      <input type="text" />
+      <button type="submit">Submit</button>
+    </form>
+    <!-- event listener-click event -->
+     <h3>You can try this in below output itself</h3>
+  
+    <button id="myButton">Click Me!</button>
+  
+    <script>
+      const button = document.querySelector("#myButton");
+  
+      button.addEventListener("click", () => {
+        alert("Button clicked!");
+      });
+    </script>
+    <!-- event listener-mouseover event -->
+      <h3>You can try this in below output itself</h3>
+
+    <button id="myButton">Hover Me!</button>
+  
+    <script>
+      const buttons = document.querySelector("#myButton");
+  
+      buttons.addEventListener("mouseover", () => {
+        alert("Mouse over!");
+      });
+    </script>
+    <!-- event listener-keydown events -->
+     <h3>You can try this in below output itself</h3>
+  
+    <input id="myInput" type="text" />
+  
+    <script>
+      const input = document.querySelector("#myInput");
+  
+      input.addEventListener("keydown", (event) => {
+        alert("Key down: " + event.key);
+      });
+    </script>
+    <!-- event listener-submit events -->
+     <h3>You can try this in below output itself</h3>
+  
+    <form id="myForm">
+      <input type="text" />
+      <button type="submit">Submit</button>
+    </form>
+  
+    <script>
+      const form = document.querySelector("#myForm");
+  
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        alert("Form submitted!");
+      });
+    </script>
+  </body>
+  </html>
+  
