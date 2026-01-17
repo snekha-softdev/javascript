@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CRUD Buttons</title>
+</head>
+<body>
+  <h2>Add / Edit / Delete – Name Only</h2>
+
+  <input type="text" id="nameInput" placeholder="Enter name" />
+  <button onclick="addData()">Add</button>
+
+  <div class="card" id="list">
+</div>
+  <!-- <ul id="list"></ul> -->
+
+  <script>
+    const API_URL = "https://694e23abb5bc648a93bf7028.mockapi.io/stephen1";
+    let editId = null;
+
+    // GET
+    function getData() {
+      fetch(API_URL)
+        .then(res => res.json())
+        .then(data => {
+          const list = document.getElementById("list");
+          list.innerHTML = "";
+          data.forEach(item => {
+            list.innerHTML += `
+              <h1><strong>name: </strong>${item.name}</h1>
+                <button onclick="editData('${item.id}', '${item.name}')">Edit</button>
+                <button onclick="deleteData('${item.id}')">Delete</button>
+              
+            `;
+          });
+        });
+    }
+
+    // ADD / UPDATE
+    function addData() {
+      const name = document.getElementById("nameInput").value;
+
+      if (editId) {
+        fetch(`${API_URL}/${editId}`, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name })
+        }).then(() => {
+          editId = null;
+          document.getElementById("nameInput").value = "";
+          getData();
+        });
+      } else {
+        fetch(API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name })
+        }).then(() => {
+          document.getElementById("nameInput").value = "";
+          getData();
+        });
+      }
+    }
+
+    // EDIT
+    function editData(id, name) {
+      document.getElementById("nameInput").value = name;
+      editId = id;
+    }
+
+    // DELETE
+    function deleteData(id) {
+      fetch(`${API_URL}/${id}`, {
+        method: "DELETE"
+      }).then(() => getData());
+    }
+
+    getData();
+  </script>
+</body>
+</html>
