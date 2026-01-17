@@ -1,0 +1,38 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Regular Expression Example</title>
+    </head>
+    <body>
+      <h3>Try this in Try Me! Editor</h3>
+      <h3>Press F12 to see the console values or</h3>
+      <h3>Open console by inspect to see the console values</h3>
+    
+      <script>
+        const regex = /pattern/;
+        console.log(regex); 
+        // Testing for a Match
+        const regex1 = /Hello/;
+        const text = "Hello, world!";
+        const result = regex.test(text);
+        console.log(result);
+        // Matching a Pattern
+        const regex2 = /world/;
+        const text1 = "Hello, world!";
+        const result1 = text.match(regex);
+        console.log(result); 
+        // Using Regular Expression Flags
+        const regex3 = /hello/i;
+        const text3 = "Hello, world!";
+        const result3 = regex.test(text);
+        console.log(result);
+        // Using Metacharacters and Character Classes
+        const regex4 = /[aeiou]/;
+        const text4 = "Hello, world!";
+        const result4 = text.match(regex);
+        console.log(result); 
+      </script>
+    </body>
+    </html>  
+  
